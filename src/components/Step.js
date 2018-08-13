@@ -85,6 +85,10 @@ export default class JoyrideStep extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    removeScope();
+  }
+
   componentWillReceiveProps(nextProps) {
     const { action, continuous, debug, index, lifecycle, step, update } = this.props;
     const { changed, changedFrom } = treeChanges(this.props, nextProps);
